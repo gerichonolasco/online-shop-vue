@@ -1,7 +1,7 @@
 <template>
   <header>
 
-    <v-toolbar title="Application">
+    <v-toolbar title="PetPals">
       <v-btn
           @click="router.push({ name: 'CartView' })"
           color="primary"

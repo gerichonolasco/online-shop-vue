@@ -14,7 +14,7 @@
     <div class="product-details">
       <p>Brand: {{ selectedProduct.brand }}</p>
       <p>Description: {{ selectedProduct.description }}</p>
-      <h2>Price: ${{ selectedProduct.price }}</h2>
+      <h2>Price: P{{ selectedProduct.price }}</h2>
       <v-btn
           variant="elevated"
           color="indigo-lighten-3"

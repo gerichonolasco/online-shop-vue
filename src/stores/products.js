@@ -1,27 +1,36 @@
+// products.js
 import { defineStore } from 'pinia'
-
 
 export const productsStore = defineStore('products', {
   state: () => ({
-    products: [],
-      cart: []
+    products: [
+      {
+        id: 1,
+        brand: 'Labrador',
+        description: 'Rigor is a 2 year old Labrdador',
+        thumbnail: '../../img/labrador.jpg',
+        price: 20.99,
+        category: 'Category A'
+      },
+      {
+        id: 2,
+        brand: 'Chihuahua',
+        description: 'Lucy the chihuahua is 10 years old',
+        thumbnail: '../../img/chihuahua.jpg',
+        price: 15.99,
+        category: 'Category B'
+      },
+      // Add more products as needed
+    ],
+    cart: []
   }),
 
   actions: {
-    fetchProductsFromDB() {
-      fetch('https://dummyjson.com/products')
-          .then(res => res.json())
-          .then(json => {
-            this.products = json.products;
-          })
-    },
-
     addToCart(product) {
       this.cart.push(product)
     },
 
     removeFromCart(id) {
-      console.log('>>>>> ID', id)
       this.cart = this.cart.filter((item) => item.id !== id)
     }
   }

@@ -14,7 +14,7 @@
       </v-card-title>
 
       <v-card-subtitle>
-        $ {{ props.productData.price }}
+        P {{ props.productData.price }}
       </v-card-subtitle>
 
       <v-card-text>
@@ -51,4 +51,4 @@
   const goToProductPage = (productId) => {
     emit('item-clicked', productId)
   }
-</script>
+</script> 
