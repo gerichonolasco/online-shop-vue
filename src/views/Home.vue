@@ -4,6 +4,11 @@
     </div>
     <div class="img">
         <img src="/img/Title.jpg"  alt="Big Picture">
+        <img src="/img/Title2.jpg"  alt="Big Picture">
+
+    </div>
+    <div class="about">
+        <H1>"Bringing furry joy to your doorstep, one click at a time!"</H1>
     </div>
 </template>
 
