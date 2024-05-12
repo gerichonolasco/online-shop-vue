@@ -1,6 +1,5 @@
 <template>
   <div class="products-list">
-    <v-text-field clearable label="Label" prepend-icon="$vuetify"></v-text-field>
     <v-row no-gutters>
       <v-col
           v-for="product in store.products"
