@@ -12,7 +12,6 @@
       <div class="item-details">
         <img :src="item.thumbnail" alt="">
         <span>Brand: {{ item.brand }}</span>
-        <span>Category: {{ item.category }}</span>
         <span>Price: P{{ item.price }}</span>
         <button @click="removeFromCart(item.id)">Remove</button>
       </div>
