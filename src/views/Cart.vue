@@ -1,5 +1,5 @@
 <template>
-  <button @click="router.push({ name: 'Catalog' })"class="colors">Back to catalog</button>
+  <button @click="router.push({ name: 'Catalog' })" class="colors">Back to catalog</button>
   <div v-if="!store.cart.length" style="text-align: center" class="colors">
     <h1>Empty Cart ...</h1>
   </div>
@@ -11,27 +11,20 @@
     >
       <div class="item-details colors">
         <img :src="item.thumbnail" alt="">
-        <span>Brand: {{ item.brand }}</span>
+        <span>Breed: {{ item.brand }}</span>
         <span>Price: P{{ item.price }}</span>
         <button @click="removeFromCart(item.id)">Remove</button>
       </div>
     </div>
+    <button class="checkout-button colors" @click="checkout">Checkout</button>
   </div>
 </template>
-
-<script>
-  import { defineComponent } from "vue";
-  export default defineComponent({
-    name: 'CartView'
-  })
-</script>
 
 <script setup>
   import { productsStore } from "@/stores/products";
   import { useRouter } from "vue-router";
 
   const router = useRouter()
-
   const store = productsStore()
 
   const removeFromCart = (id) => {
@@ -40,6 +33,8 @@
 
   const checkout = () => {
     // Add checkout logic here
+    // For now, let's just navigate back to the catalog after checkout
+    router.push({ name: 'Catalog' })
   }
 </script>
 
