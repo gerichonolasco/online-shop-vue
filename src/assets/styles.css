@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+body {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -7,4 +16,94 @@ main {
     max-width: 900px;
     margin: 0 auto;
     padding: 16px;
+}
+
+.container {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbar {
+    width: 100%;
+    background: #fff;
+    padding: 25px 40px;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 300;
+}
+
+.navbar__row {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.navbar__ul {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    font-family: "Gotham Bold";
+}
+
+.navbar__link {
+    padding: 8px 20px;
+    color: #6c757d;
+    font-size: 15px;
+}
+
+
+
+.navbar__item {
+    position: relative;
+    font-family: "Gotham Bold";
+}
+
+.navbar__subset {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #fff;
+    min-width: 220px;
+    border-radius: 3px;
+    padding: 10px;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.07);
+    display: none;
+    z-index: 10;
+}
+
+.navbar__subset li ul {
+    left: 100%;
+    top: 0;
+}
+
+.navbar__item:hover {
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+}
+
+.navbar__subset .navbar__item--has-sub:before {
+    content: '\e017';
+    position: absolute;
+    right: 15px;
+    top: 9px;
+}
+
+.navbar__item--has-sub:hover > .navbar__subset {
+    display: block;
+}
+
+.navbar__action {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
 }
