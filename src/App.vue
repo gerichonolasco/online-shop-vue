@@ -34,6 +34,18 @@
 							class="navbar-link"
 							>About</RouterLink
 						>
+						<RouterLink
+							to="/register"
+							active-class="active"
+							class="navbar-link"
+							>Register</RouterLink
+						>
+						<RouterLink
+							to="/login"
+							active-class="active"
+							class="navbar-link"
+							>Login</RouterLink
+						>
 					</nav>
 				</div>
 
@@ -45,22 +57,6 @@
 						variant="elevated"
 					>
 						Items in Cart: {{ store.cart.length }}
-					</v-btn>
-					<!-- Login button -->
-					<v-btn
-						@click="router.push({ name: 'Login' })"
-						color="primary"
-						variant="elevated"
-					>
-						Login
-					</v-btn>
-					<!-- Register button -->
-					<v-btn
-						@click="router.push({ name: 'Register' })"
-						color="primary"
-						variant="elevated"
-					>
-						Register
 					</v-btn>
 				</div>
 			</v-toolbar>
@@ -95,7 +91,7 @@ body {
 	font-weight: bold;
 	font-size: 24px;
 	cursor: pointer;
-	margin-left: 75%;
+	margin-left: 65%;
 }
 
 .small-picture {

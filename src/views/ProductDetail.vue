@@ -1,120 +1,61 @@
 <template>
-	<body>
-		<header>
-			<v-toolbar class="header-toolbar">
-				<!-- Make the small picture clickable -->
-				<RouterLink to="/" class="router-link">
-					<img
-						src="../img/petpals.png"
-						alt="Small Picture"
-						class="small-picture"
-					/>
-				</RouterLink>
+	<v-btn
+		@click="router.push({ name: 'Catalog' })"
+		color="#D04C00"
+		variant="elevated"
+	>
+		Back to catalog
+	</v-btn>
 
-				<!-- PetPals title -->
-				<!-- <span class="brand">PetPals Paradise</span> -->
-
-				<div class="nav-center">
-					<nav>
-						<RouterLink
-							to="/"
-							active-class="active"
-							class="navbar-link"
-							>Home</RouterLink
-						>
-						<RouterLink
-							to="/catalog"
-							active-class="active"
-							class="navbar-link"
-							>Pets</RouterLink
-						>
-						<RouterLink
-							to="/about"
-							active-class="active"
-							class="navbar-link"
-							>About</RouterLink
-						>
-					</nav>
-				</div>
-
-				<!-- Cart button -->
-				<div class="cart-items">
-					<v-btn
-						@click="router.push({ name: 'CartView' })"
-						color="#96922B"
-						variant="elevated"
-					>
-						Items in Cart: {{ store.cart.length }}
-					</v-btn>
-				</div>
-			</v-toolbar>
-		</header>
-		<main>
-			<RouterView />
-		</main>
-	</body>
+	<div class="product">
+		<div class="product-image">
+			<img :src="selectedProduct.thumbnail" alt="" />
+		</div>
+		<div class="product-details">
+			<p>Brand: {{ selectedProduct.brand }}</p>
+			<p>Description: {{ selectedProduct.description }}</p>
+			<h2>Price: P{{ selectedProduct.price }}</h2>
+			<v-btn variant="elevated" color="#D04C00" @click="addToCart"
+				>Add to cart</v-btn
+			>
+		</div>
+	</div>
 </template>
 
-<script setup>
-import { RouterLink } from "vue-router";
-import { useRouter } from "vue-router";
-import { productsStore } from "@/stores/products";
-
-const router = useRouter();
-const store = productsStore();
+<script>
+import { defineComponent } from "vue";
+export default defineComponent({
+	name: "ProductDetails",
+});
 </script>
 
-<style>
-body {
-	background-color: #faefe0;
-}
-</style>
+<script setup>
+import { computed } from "vue";
+import { productsStore } from "@/stores/products";
+import { useRoute, useRouter } from "vue-router";
+
+const store = productsStore();
+const router = useRouter();
+const route = useRoute();
+
+const selectedProduct = computed(() => {
+	return store.products.find((item) => item.id === Number(route.params.id));
+});
+
+const addToCart = () => {
+	store.addToCart(selectedProduct.value);
+	router.push({ name: "CartView" });
+};
+</script>
 
 <style scoped>
-.header-toolbar {
-	background-color: #d04c00;
+.product {
+	display: flex;
+	margin-top: 50px;
+	color: #d04c00;
 }
 
-.cart-items {
-	font-weight: bold;
-	font-size: 24px;
-	cursor: pointer;
-	margin-left: auto; /* align the buttons to the right */
-}
-
-.small-picture {
-	width: 45px; /* Adjust the width of the picture */
-	height: auto; /* Maintain aspect ratio */
-	margin-left: 2px;
-	margin-right: 8px; /* Add some space between picture and text */
-}
-
-.active {
-	font-weight: 700;
-	color: red;
-}
-
-.nav-center {
-	justify-content: center; /* Add this line to center horizontally */
-	align-items: center; /* This line already centers vertically */
-}
-
-.navbar-link {
-	padding: 10px;
-	color: #faefe0;
-	font-size: 15px;
-	text-decoration: none;
-}
-
-.login-register-buttons {
-	display: flex; /* Align buttons horizontally */
-	justify-content: flex-end; /* Align to the right */
-	margin-top: 10px; /* Space between cart items and buttons */
-}
-
-/* Style for the Register button */
-.register-button {
-	background-color: #d04c00; /* Replace #yourColorHere with the desired color */
-	margin-left: 10px; /* Space between Login and Register buttons */
+.product-image {
+	margin-right: 24px;
 }
 </style>
