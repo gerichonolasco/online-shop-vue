@@ -2,8 +2,10 @@
   <body>
   <header>
     <v-toolbar class="header-toolbar">
-      <!-- Add the small picture here -->
-      <img src="../img/petpals.png" alt="Small Picture" class="small-picture">
+      <!-- Make the small picture clickable -->
+      <RouterLink to="/" class="router-link">
+        <img src="../img/petpals.png" alt="Small Picture" class="small-picture">
+      </RouterLink>
       
       <!-- PetPals title -->
       <!-- <span class="brand">PetPals Paradise</span> -->
@@ -62,7 +64,7 @@ body{
 .small-picture {
   width: 45px; /* Adjust the width of the picture */
   height: auto; /* Maintain aspect ratio */
-  margin-left: 24  px;
+  margin-left: 24px;
   margin-right: 8px; /* Add some space between picture and text */
 }
 
