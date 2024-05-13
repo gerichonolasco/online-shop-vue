@@ -1,6 +1,6 @@
 <template>
   <div class="products-list">
-    <v-row no-gutters>
+    <v-row no-gutters class="colors">
       <v-col
           v-for="product in store.products"
           :key="product.id"
@@ -14,7 +14,6 @@
         />
       </v-col>
     </v-row>
-
     </div>
 </template>
 
@@ -50,5 +49,9 @@
 </script>
 
 <style scoped>
-
+/* @media (min-width: 1024px) {
+  .products-list{
+    
+  }
+} */
 </style>

@@ -7,7 +7,7 @@
         <img src="/img/Title2.jpg"  alt="Big Picture">
 
     </div>
-    <div class="about">
+    <div class="about1">
         <H1>"Bringing furry joy to your doorstep, one click at a time!"</H1>
     </div>
 </template>
@@ -22,11 +22,21 @@
 }
 
  .about {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center; /* Add this line to center horizontally */
+    align-items: center; /* This line already centers vertically */
+    color: #D04C00;
+    font-size: 25px;
+  }
+
+  .about1 {
     min-height: 20vh;
     display: flex;
     justify-content: center; /* Add this line to center horizontally */
     align-items: center; /* This line already centers vertically */
     color: #D04C00;
+    font-size: 16px;
   }
 }
 </style>
