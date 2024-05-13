@@ -9,16 +9,14 @@ export const productsStore = defineStore('products', {
         brand: 'Labrador',
         description: 'Rigor is a 2 year old Labrdador',
         thumbnail: '../../img/labrador.jpg',
-        price: 20.99,
-        category: 'Category A'
+        price: 39000.00,
       },
       {
         id: 2,
         brand: 'Chihuahua',
         description: 'Lucy the chihuahua is 10 years old',
         thumbnail: '../../img/chihuahua.jpg',
-        price: 15.99,
-        category: 'Category B'
+        price: 25000.00,
       },
       // Add more products as needed
     ],

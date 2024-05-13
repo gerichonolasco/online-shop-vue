@@ -1,7 +1,7 @@
 <template>
   <v-sheet class="ma-2 pa-2">
     <v-card
-        class="product"
+        class="product color"
     >
       <v-img
           :src="props.productData.thumbnail"
@@ -52,3 +52,9 @@
     emit('item-clicked', productId)
   }
 </script> 
+
+<style>
+  .color {
+  color: #D04C00;
+  }
+</style>

@@ -1,9 +1,9 @@
 <template>
-  <button @click="router.push({ name: 'Catalog' })" class="colors">Back to catalog</button>
+  <button @click="router.push({ name: 'Catalog' })"class="colors">Back to catalog</button>
   <div v-if="!store.cart.length" style="text-align: center" class="colors">
     <h1>Empty Cart ...</h1>
   </div>
-  <div class="cart-items colors" v-else>
+  <div class="cart-items" v-else>
     <div
         class="cart-item"
         v-for="item in store.cart"
@@ -12,7 +12,6 @@
       <div class="item-details colors">
         <img :src="item.thumbnail" alt="">
         <span>Brand: {{ item.brand }}</span>
-        <span>Category: {{ item.category }}</span>
         <span>Price: P{{ item.price }}</span>
         <button @click="removeFromCart(item.id)">Remove</button>
       </div>
@@ -39,6 +38,9 @@
     store.removeFromCart(id)
   }
 
+  const checkout = () => {
+    // Add checkout logic here
+  }
 </script>
 
 <style scoped>
@@ -58,5 +60,20 @@
 
 .item-details img {
   width: 20%;
+}
+
+.checkout-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkout-button:hover {
+  background-color: #45a049;
 }
 </style>
