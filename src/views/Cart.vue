@@ -1,6 +1,6 @@
 <template>
-  <button @click="router.push({ name: 'Catalog' })">Back to catalog</button>
-  <div v-if="!store.cart.length" style="text-align: center">
+  <button @click="router.push({ name: 'Catalog' })"class="colors">Back to catalog</button>
+  <div v-if="!store.cart.length" style="text-align: center" class="colors">
     <h1>Empty Cart ...</h1>
   </div>
   <div class="cart-items" v-else>
@@ -9,7 +9,7 @@
         v-for="item in store.cart"
         :key="item.id"
     >
-      <div class="item-details">
+      <div class="item-details colors">
         <img :src="item.thumbnail" alt="">
         <span>Brand: {{ item.brand }}</span>
         <span>Price: P{{ item.price }}</span>
