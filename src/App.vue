@@ -64,7 +64,7 @@ body{
 .small-picture {
   width: 45px; /* Adjust the width of the picture */
   height: auto; /* Maintain aspect ratio */
-  margin-left: 24px;
+  margin-left: 2px;
   margin-right: 8px; /* Add some space between picture and text */
 }
 
