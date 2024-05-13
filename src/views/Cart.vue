@@ -16,7 +16,9 @@
         <button @click="removeFromCart(item.id)">Remove</button>
       </div>
     </div>
-    <button class="checkout-button colors" @click="checkout">Checkout</button>
+    <div class="checkout-button-container">
+      <button class="checkout-button colors" @click="checkout">Checkout</button>
+    </div>
   </div>
 </template>
 
@@ -57,15 +59,20 @@
   width: 20%;
 }
 
-.checkout-button {
+.checkout-button-container {
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
-  padding: 10px 20px;
+}
+
+.checkout-button {
+  padding: 10px 15px; 
   background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 16px; 
 }
 
 .checkout-button:hover {
