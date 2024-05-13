@@ -2,7 +2,7 @@
 
   <v-btn
       @click="router.push({ name: 'Catalog' })"
-      color="primary"
+      color="#D04C00"
       variant="elevated">
     Back to catalog
   </v-btn>
@@ -17,7 +17,7 @@
       <h2>Price: P{{ selectedProduct.price }}</h2>
       <v-btn
           variant="elevated"
-          color="indigo-lighten-3"
+          color="#D04C00"
           @click="addToCart"
       >Add to cart</v-btn>
     </div>
@@ -50,11 +50,12 @@
     router.push({ name: 'CartView' })
   }
 </script>
-
+  
 <style scoped>
 .product {
   display: flex;
   margin-top: 50px;
+  color: #D04C00;
 }
 
 .product-image {
