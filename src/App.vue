@@ -3,7 +3,7 @@
   <header>
     <v-toolbar class="header-toolbar">
       <!-- Add the small picture here -->
-      <img src="../img/petpals.jpg" alt="Small Picture" class="small-picture">
+      <img src="../img/petpals.png" alt="Small Picture" class="small-picture">
       
       <!-- PetPals title -->
       <!-- <span class="brand">PetPals Paradise</span> -->
@@ -11,8 +11,8 @@
       <div class='nav-center'>
         <nav>
             <RouterLink to="/" active-class="active" class="navbar-link">Home</RouterLink>
-            <RouterLink to="/catalog" active-class="active" class="navbar-link">Catalog</RouterLink>
-            <RouterLink to="/about" active-class="active" class="navbar-link">Abouts</RouterLink>
+            <RouterLink to="/catalog" active-class="active" class="navbar-link">Pets</RouterLink>
+            <RouterLink to="/about" active-class="active" class="navbar-link">About</RouterLink>
         </nav>
       </div>
       
@@ -60,9 +60,9 @@ body{
 }
 
 .small-picture {
-  width: 30px; /* Adjust the width of the picture */
+  width: 45px; /* Adjust the width of the picture */
   height: auto; /* Maintain aspect ratio */
-  margin-left: 24px;
+  margin-left: 24  px;
   margin-right: 8px; /* Add some space between picture and text */
 }
 
